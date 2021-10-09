@@ -1,0 +1,7 @@
+#!/bin/bash
+# Git hooks allows scripts to be run everytime a certain event
+# (in this case pre-commits) occur
+
+for i in `find . -name "*.py" -type f`; do
+    pipenv run autopep8 --in-place --aggressive --aggressive "$i";
+done
